@@ -39,10 +39,11 @@ if __name__ == '__main__':
     while time.time() < stoptime:
         try:
             # We receive a message as a Python dictionary
-            message = client.recvMessage()  
+            message = client.recvMessage() 
                 
             # The frame is a numpy array that can we pass through a CNN for example     
             image = frame2numpy(message['frame'], (320,160))
+            print(image)
             commands = model.run(image)
             # We send the commands predicted by the agent back to DeepGTAV to control the vehicle
             client.sendMessage(Commands(commands[0], commands[1], commands[2]))
