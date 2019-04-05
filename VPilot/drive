@@ -10,7 +10,7 @@ import cv2
 
 class Model:
     def run(self,frame):
-        return [1.0, 0.0, 0.0] # throttle, brake, steering
+        return [0.0, 0.0, 0.0] # throttle, brake, steering
 
 # Controls the DeepGTAV vehicle
 if __name__ == '__main__':
